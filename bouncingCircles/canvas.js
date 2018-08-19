@@ -7,13 +7,15 @@ var r = Math.random() * 255;
 var b = Math.random() * 255;
 var g = Math.random() * 255;
 
-var x = 200;
-var y = 200;
+var x = Math.random() * window.innerWidth;
+var y = Math.random() * window.innerHeight;
 var radius = 30;
+var velocityFactor = 10;
 
 // velocity
-var dx = 5;
-var dy = 5;
+// decide on direction first, with random velocity
+var dx = (Math.random()  - 0.5) * velocityFactor;
+var dy = (Math.random() - 0.5) * velocityFactor;
 
 
 function animate() {
