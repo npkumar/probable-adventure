@@ -13,6 +13,13 @@ window.addEventListener('mousemove', function(event) {
   mouse.y = event.y;
 });
 
+window.addEventListener('resize', function() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  init();
+});
+
 function Circle(x, y, dx, dy, radius, r, g, b, a) {
   this.x = x;
   this.y = y;
@@ -92,6 +99,30 @@ function animate() {
   circles.forEach(function(circle) {
     circle.update();
   });
+}
+
+function init() {
+  circles = [];
+
+  for (var i = 0; i < NUM_CIRCLES; i++) {
+    var r = Math.random() * 255;
+    var b = Math.random() * 255;
+    var g = Math.random() * 255;
+    var a = Math.random();
+
+    var x = Math.random() * (window.innerWidth - this.radius * 2) + radius;
+    var y = Math.random() * (window.innerHeight - this.radius * 2) + radius;
+    var radius = Math.random() * 30;
+    var velocityFactor = 5;
+
+    // velocity
+    // decide on direction first, with random velocity
+    var dx = (Math.random()  - 0.5) * velocityFactor;
+    var dy = (Math.random() - 0.5) * velocityFactor;
+    circles.push(
+      new Circle(x, y, dx, dy, radius, r, g, b, a)
+    );
+  }
 }
 
 animate();
