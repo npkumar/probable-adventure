@@ -12,3 +12,6 @@ https://codepen.io/getnpk/pen/OoOoPL
 
 ### Bouncing balls with Collision Detection
 https://codepen.io/getnpk/full/oQgEOd
+
+### Bubble Chart with labels using D3 js v4
+https://codepen.io/getnpk/full/gQaoZL
