@@ -132,8 +132,9 @@ function animate() {
     }
   }
   
-  circles[i].update();
-  circles[j].update();
+  circles.forEach(function(circle) {
+    circle.update();
+  });
 }
 
 animate();
